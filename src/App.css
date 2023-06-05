@@ -28,6 +28,13 @@
   color: #61dafb;
 }
 
+.Weather-button {
+  font-size: 40px;
+  background-color: #282c34;
+  color: #61dafb;
+  border-color: #282c34;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
