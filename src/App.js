@@ -1,8 +1,31 @@
+import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 import logo from './doggy.png';
 import './App.css';
-import {useEffect, useState} from "react";
+import { useEffect, useState } from 'react';
 
-function App() {
+function LoginPage() {
+    // Create your login form here
+    return (
+        <div className="center-content">
+            <h2>Login Page</h2>
+            <form>
+                <label>
+                    Username:
+                    <input type="text" name="username" />
+                </label>
+                <br />
+                <label>
+                    Password:
+                    <input type="password" name="password" />
+                </label>
+                <br />
+                <input type="submit" value="Submit" />
+            </form>
+        </div>
+    );
+}
+
+function HomePage() {
     const [weatherData, setWeatherData] = useState(null);
 
     const fetchWeatherData = () => {
@@ -14,18 +37,13 @@ function App() {
     return (
         <div className="App">
             <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo"/>
+                <img src={logo} className="App-logo" alt="logo" />
                 <p>
                     Welcome to is Doggy website!
                 </p>
-                <a
-                    className="App-link"
-                    href="http://localhost:8080/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
+                <Link className="App-link" to="/login">
                     Get started
-                </a>
+                </Link>
                 {!weatherData ? (
                     <button className="Weather-button" onClick={fetchWeatherData}>
                         How is the weather?
@@ -41,6 +59,17 @@ function App() {
                 )}
             </header>
         </div>
+    );
+}
+
+function App() {
+    return (
+        <Router>
+            <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/login" element={<LoginPage />} />
+            </Routes>
+        </Router>
     );
 }
 

@@ -10,6 +10,13 @@
 
 # production
 /build
+.idea/*
+!.idea/codeStyles/
+!.idea/inspectionProfiles/
+!.idea/misc.xml
+!.idea/modules.xml
+!.idea/runConfigurations/
+
 
 # misc
 .DS_Store

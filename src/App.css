@@ -24,6 +24,14 @@
   color: white;
 }
 
+.center-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
 .App-link {
   color: #61dafb;
 }
