@@ -3,28 +3,7 @@ import logo from './doggy.png';
 import './App.css';
 import React, { useEffect, useState } from 'react';
 import Chat from "./Chat";
-
-function LoginPage() {
-    // Create your login form here   nhh
-    return (
-        <div className="center-content">
-            <h2>Login Page</h2>
-            <form>
-                <label>
-                    Username:
-                    <input type="text" name="username" />
-                </label>
-                <br />
-                <label>
-                    Password:
-                    <input type="password" name="password" />
-                </label>
-                <br />
-                <input type="submit" value="Submit" />
-            </form>
-        </div>
-    );
-}
+import LoginPage from "./loginPage";
 
 function HomePage() {
     const [weatherData, setWeatherData] = useState(null);

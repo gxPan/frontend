@@ -5,7 +5,7 @@ function Chat() {
     const [output, setOutput] = useState("");
 
     const handleClick = () => {
-        fetch(`http://localhost:8080/api/${input}`)
+        fetch(`http://localhost:8080/chat/${input}`)
             .then((response) => response.text())
             .then((data) => setOutput(data));
     };
