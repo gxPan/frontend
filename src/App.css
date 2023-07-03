@@ -32,7 +32,12 @@
   flex-direction: column;
 }
 
+.welcome {
+  color: black;
+}
+
 .App-link {
+  margin-top: 30px;
   color: #61dafb;
 }
 

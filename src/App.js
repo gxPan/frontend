@@ -1,7 +1,8 @@
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 import logo from './doggy.png';
 import './App.css';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import Chat from "./Chat";
 
 function LoginPage() {
     // Create your login form here   nhh
@@ -38,9 +39,10 @@ function HomePage() {
         <div className="App">
             <header className="App-header">
                 <img src={logo} className="App-logo" alt="logo" />
-                <p>
+                <p className="welcome">
                     Welcome to is Doggy website!
                 </p>
+                <Chat />
                 <Link className="App-link" to="/login">
                     Get started
                 </Link>
