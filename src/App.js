@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 import logo from './doggy.png';
 import './App.css';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 function LoginPage() {
     // Create your login form here   nhh
@@ -25,6 +25,33 @@ function LoginPage() {
     );
 }
 
+function Chat() {
+    const [input, setInput] = useState("");
+    const [output, setOutput] = useState("");
+
+    const handleClick = () => {
+        fetch(`http://localhost:8080/api/${input}`)
+            .then((response) => response.text())
+            .then((data) => setOutput(data));
+    };
+
+    return (
+        <div className="App">
+            <input
+                type="text"
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+            />
+            <button onClick={handleClick}>
+                Send
+            </button>
+            <div>
+                {output}
+            </div>
+        </div>
+    );
+}
+
 function HomePage() {
     const [weatherData, setWeatherData] = useState(null);
 
@@ -38,9 +65,10 @@ function HomePage() {
         <div className="App">
             <header className="App-header">
                 <img src={logo} className="App-logo" alt="logo" />
-                <p>
+                <p className="welcome">
                     Welcome to is Doggy website!
                 </p>
+                <Chat />
                 <Link className="App-link" to="/login">
                     Get started
                 </Link>
