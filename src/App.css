@@ -32,8 +32,12 @@
   flex-direction: column;
 }
 
+.name {
+  color: yellowgreen;
+}
+
 .welcome {
-  color: black;
+  color: antiquewhite;
 }
 
 .App-link {

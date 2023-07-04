@@ -18,9 +18,12 @@ function HomePage() {
         <div className="App">
             <header className="App-header">
                 <img src={logo} className="App-logo" alt="logo" />
-                <p className="welcome">
-                    Welcome to is Doggy website!
+                <p className="name">
+                    Dr.Doggy
                 </p>
+                <a className="welcome">
+                    can answer you anything!
+                </a>
                 <Chat />
                 <Link className="App-link" to="/login">
                     Get started
